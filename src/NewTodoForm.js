@@ -1,29 +1,29 @@
-import React, { useState, useReducer } from "react";
-import ReactDOM from "react-dom";
-import {v1 as uuid} from "uuid";
+import React, { useReducer } from "react";
+//import ReactDOM from "react-dom";
+import { v1 as uuid } from "uuid";
 import "./newTodoForm.css";
 
 function NewTodoForm({ task, createTodo, getDate }) {
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
-      task: ""
+      task: "",
     }
   );
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setUserInput({ [evt.target.name]: evt.target.value });
   };
 
-  const handleSubmit = evt => {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
-
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-
-    const newTodo = { id: uuid(), task: userInput.task, completed: false, createdDate:getDate(), endDate: null};
+    const newTodo = {
+      id: uuid(),
+      task: userInput.task,
+      completed: false,
+      createdDate: getDate(),
+      endDate: null,
+    };
     createTodo(newTodo);
     setUserInput({ task: "" });
   };

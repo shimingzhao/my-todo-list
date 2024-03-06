@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import "./Todo.css";
 
 function Todo({ todo, remove, update, toggleComplete, getDate }) {
@@ -44,14 +44,23 @@ function Todo({ todo, remove, update, toggleComplete, getDate }) {
         >
           {todo.task}
         </li>
-        <li><p className="Date" id={todo.id}>{todo.createdDate}</p></li>
-        <li><p className="Date" id={todo.id}>{todo.completed? todo.endDate : null}</p></li>
+        <li>
+          {" "}
+          <p className="Date" id={todo.id}>
+            {todo.createdDate}
+          </p>
+        </li>
+        <li>
+          <p className="Date" id={todo.id}>
+            {todo.completed ? todo.endDate : null}
+          </p>
+        </li>
         <div className="Todo-buttons">
           <button onClick={toggleFrom}>
-            <i className = "fa fa-pencil"></i>
+            <i className="fa fa-pencil"></i>
           </button>
           <button onClick={handleClick}>
-            <i id={todo.id} className = "fa fa-trash" aria-hidden="true"></i>
+            <i id={todo.id} className="fa fa-trash" aria-hidden="true"></i>
           </button>
         </div>
       </div>
