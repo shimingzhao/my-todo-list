@@ -1,0 +1,47 @@
+import React, { useState, useReducer } from "react";
+import ReactDOM from "react-dom";
+import {v1 as uuid} from "uuid";
+import "./newTodoForm.css";
+
+function NewTodoForm({ task, createTodo, getDate }) {
+  const [userInput, setUserInput] = useReducer(
+    (state, newState) => ({ ...state, ...newState }),
+    {
+      task: ""
+    }
+  );
+
+  const handleChange = evt => {
+    setUserInput({ [evt.target.name]: evt.target.value });
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+
+    const newTodo = { id: uuid(), task: userInput.task, completed: false, createdDate:getDate(), endDate: null};
+    createTodo(newTodo);
+    setUserInput({ task: "" });
+  };
+
+  return (
+    <form className="NewTodoForm" onSubmit={handleSubmit}>
+      <label htmlFor="task">New todo</label>
+      <input
+        value={userInput.task}
+        onChange={handleChange}
+        id="task"
+        type="text"
+        name="task"
+        placeholder="New Todo"
+      />
+      <button>Add Todo</button>
+    </form>
+  );
+}
+
+export default NewTodoForm;

@@ -1,26 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import TodoList from "./TodoList.js";
+import "./styles.css";
+
+// Project for Udemy react bootcamp
+// https://www.udemy.com/course/modern-react-bootcamp/
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My first todo list app
-          My first todo list app
-          My first todo list app
-          My first todo list app
-        </a>
-      </header>
+      <TodoList />
     </div>
   );
 }
