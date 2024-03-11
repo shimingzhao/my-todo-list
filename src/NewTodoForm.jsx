@@ -1,9 +1,11 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useContext } from "react";
 //import ReactDOM from "react-dom";
 import { v1 as uuid } from "uuid";
 import "./newTodoForm.css";
+import { TodoContext } from "./TodoList";
 
-function NewTodoForm({ task, createTodo, getDate }) {
+function NewTodoForm() {
+  const { createTodo, getDate } = useContext(TodoContext);
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-//import ReactDOM from "react-dom";
-import "./Todo.css";
+import React, { useState } from 'react';
+// import ReactDOM from "react-dom";
+import './Todo.css';
 
-function Todo({ todo, remove, update, toggleComplete, getDate }) {
+function Todo({ todo, remove, update, toggleComplete }) {
   const [isEditing, setIsEditing] = useState(false);
   const [task, setTask] = useState(todo.task);
 

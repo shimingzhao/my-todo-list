@@ -1,13 +1,23 @@
 .Todo {
   display: flex;
   margin: 0 -3rem 4px;
-  padding: 1.1rem 3rem;
+  padding: 1.1rem 1.5rem;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
 }
+.Todo li{
+  max-width: 100px; /* Your desired max-width value */
+  min-width: 100px;
+  word-wrap: break-word;
+}
 .Date {
-  margin-left: 1em;
+  max-width: 100px;
+  min-width: 100px;
+  margin-left: 0.5rem;
+}
+.TaskText {
+  max-width: 150px;
 }
 
 .Todo-task {
@@ -39,7 +49,7 @@
 
 .Todo-buttons {
   flex-shrink: 0;
-  padding-left: 0.7em;
+  /* padding-left: 0.1em; */
 }
 
 .Todo-buttons button {
