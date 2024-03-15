@@ -79,8 +79,8 @@ function TodoList() {
         Todo List <span>A simple React Todo List App</span>
       </h1>
       <ul>{todosList}</ul>
-      <TodoContext.Provider value = {{createTodo: create, getDate: getDate}}>
-      <NewTodoForm/>
+      <TodoContext.Provider value={{ createTodo: create, getDate: getDate }}>
+        <NewTodoForm />
       </TodoContext.Provider>
     </div>
   );
