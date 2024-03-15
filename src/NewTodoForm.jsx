@@ -41,7 +41,7 @@ function NewTodoForm() {
         name="task"
         placeholder="New Todo"
       />
-      <button>Add Todo</button>
+      <button data-testid="add-new-button">Add Todo</button>
     </form>
   );
 }
