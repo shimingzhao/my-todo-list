@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import App from "./App.jsx";
 
 test("renders learn react link", () => {
-  render(<App />);
+  // eslint-disable-next-line react/react-in-jsx-scope
+  render(<App/>);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });

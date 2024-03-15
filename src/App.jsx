@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TodoList from "./TodoList.js";
+import TodoList from "./TodoList.jsx";
 import "./styles.css";
 
 // Project for Udemy react bootcamp
